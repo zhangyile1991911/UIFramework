@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Playables;
+using Framework.UIFramework;
+
+namespace {3}
+{
+    /// <summary>
+    /// Auto Generate Class!!!
+    /// </summary>
+    [UI("{4}")]
+    public partial class {0} : {6}
+    {
+{1}
+        protected override void OnBind(GameObject go)
+        {
+            uiGo = go;
+{2}
+            base.OnBind(go);
+        }
+    }
+}

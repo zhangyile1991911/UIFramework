@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Scripting;
+using Framework.UIFramework;
+
+namespace {2}
+{
+    /// <summary>
+    /// Auto Generate Class!!!
+    /// </summary>
+    [UILifeTime(UILifeTimeDefine.Transient)]
+    public partial class {0} : {1}
+    {
+        [Preserve]
+        protected {0}(GameObject uiNode):base(uiNode)
+        {
+            
+        }
+
+        protected override void OnCreate()
+        {
+            base.OnCreate();
+        }
+        
+        protected override void OnShow(UIOpenParam openParam)
+        {
+            base.OnShow(openParam);
+        }
+    
+        protected override void OnHide()
+        {
+            base.OnHide();
+        }
+    
+        protected override void OnTick(float deltaTime)
+        {
+            base.OnTick(deltaTime);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+        }
+    }
+}

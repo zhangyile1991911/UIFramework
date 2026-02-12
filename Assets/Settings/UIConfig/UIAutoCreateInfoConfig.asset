@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb8f2af752cb54c93acbdd73dc153e, type: 3}
+  m_Name: UIAutoCreateInfoConfig
+  m_EditorClassIdentifier: UIFramework::Framework.UIFramework.Editor.UIAutoCreateInfoConfig
+  uiNameRules:
+  - prefixName: Ins_
+    typeName: Transform
+  - prefixName: Img_
+    typeName: Image
+  - prefixName: RT_
+    typeName: RectTransform
+  - prefixName: Btn_
+    typeName: Button
+  UIWindowViewTemplatePath: Assets/Settings/UIConfig/UITemplateCode/UIWindowViewTemplate.txt
+  UIWindowControlTemplatePath: Assets/Settings/UIConfig/UITemplateCode/UIWindowControlTemplate.txt
+  UIWidgetViewTemplatePath: Assets/Settings/UIConfig/UITemplateCode/UIWidgetViewTemplate.txt
+  UIWidgetControlTemplatePath: Assets/Settings/UIConfig/UITemplateCode/UIWidgetControlTemplate.txt
+  WindowScriptPath: Assets/Scripts/UIExample/Window
+  WidgetScriptPath: Assets/Scripts/UIExample/Widget
+  WindowPrefabPath: Assets/Resources/Prefab/Windows
+  WidgetPrefabPath: Assets/Resources/Prefab/Widgets
+  CustomWindowScope: UIExample
+  CustomWidgetScope: UIExample
+  CustomAssembly: UIExample
