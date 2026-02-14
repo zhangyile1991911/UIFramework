@@ -104,6 +104,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -313,10 +315,8 @@ GameObject:
   - component: {fileID: 5266835918327904773}
   - component: {fileID: 7906959422680632627}
   - component: {fileID: 5716924219292954740}
-  - component: {fileID: 435407907197273032}
-  - component: {fileID: 3678471460318401352}
   m_Layer: 5
-  m_Name: OBtn_Contest
+  m_Name: Btn_Contest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,38 +380,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &435407907197273032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000311510718184236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c9ff813580b4d3f920c0758f894f88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: {fileID: 3678471460318401352}
-  ignoreAlphaTouch: 0
-  alphaThreshold: 0
-  touchImage: {fileID: 5716924219292954740}
-  clickAnimKey: Click
-  clickAnimator: {fileID: 0}
-  buttonImage: {fileID: 5716924219292954740}
-  clickSoundName: button_click_1
---- !u!114 &3678471460318401352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000311510718184236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd253e17d14ec9346b4e8ec0b1ecf277, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3470697645664928255
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +389,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8323997742248830288}
-  - component: {fileID: 1022157842694660083}
   - component: {fileID: 1422192243984538772}
   m_Layer: 5
   m_Name: ContestCenterWidget
@@ -452,23 +419,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &1022157842694660083
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3470697645664928255}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 7601b28219c714a48b3843df2f984ab2, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 7601b28219c714a48b3843df2f984ab2, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!225 &1422192243984538772
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -492,10 +442,8 @@ GameObject:
   - component: {fileID: 2285985564470189172}
   - component: {fileID: 2267695547571005348}
   - component: {fileID: 2830298455631531219}
-  - component: {fileID: 8407490562335484009}
-  - component: {fileID: 4235254129909371182}
   m_Layer: 5
-  m_Name: OBtn_Course
+  m_Name: Btn_Course
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,38 +507,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8407490562335484009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6382612927409501683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c9ff813580b4d3f920c0758f894f88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: {fileID: 4235254129909371182}
-  ignoreAlphaTouch: 0
-  alphaThreshold: 0
-  touchImage: {fileID: 2830298455631531219}
-  clickAnimKey: Click
-  clickAnimator: {fileID: 0}
-  buttonImage: {fileID: 2830298455631531219}
-  clickSoundName: button_click_1
---- !u!114 &4235254129909371182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6382612927409501683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd253e17d14ec9346b4e8ec0b1ecf277, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8792347978671029281
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +611,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

@@ -2,38 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Scripting;
 using Framework.UIFramework;
-using VContainer;
 
 namespace UIExample
 {
     /// <summary>
     /// Auto Generate Class!!!
     /// </summary>
-    [UILifeTime(UILifeTimeDefine.Transient)]
-    public partial class HomeWindow : UIWindow
+    public partial class ContestCenterWidget : UIWidget
     {
-        [Inject]
-        CreateWidgetHelper WidgetHelper;
-
-        TopResWidget topResWidget;
-        //
-        CommuCenterWidget commuCenterWidget;
-        ContestCenterWidget contestCenterWidget;
-        
-
-        [UnityEngine.Scripting.Preserve]
-        protected HomeWindow(GameObject uiNode):base(uiNode)
+        protected ContestCenterWidget(GameObject go,UIWindow parent):base(go,parent)
         {
-            
+    		
         }
-
+        
         protected override void OnCreate()
         {
             base.OnCreate();
-            topResWidget = WidgetHelper.CreateWidgetController<TopResWidget>(this,Ins_TopResWidget.gameObject);
-            commuCenterWidget = WidgetHelper.CreateWidgetController<CommuCenterWidget>(this,Ins_CommuCenterWidget.gameObject);
         }
         
         protected override void OnShow(UIOpenParam openParam)
@@ -48,7 +33,7 @@ namespace UIExample
     
         protected override void OnTick(float deltaTime)
         {
-            base.OnTick(deltaTime);
+            
         }
 
         protected override void OnDestroy()

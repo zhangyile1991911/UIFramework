@@ -16,6 +16,7 @@ namespace UIExample
     {
 		public Transform Ins_BG;
 		public RectTransform RT_Center;
+		public Transform Ins_CommuCenterWidget;
 		public Transform Ins_TopResWidget;
 
         protected override void OnBind(GameObject go)
@@ -23,6 +24,7 @@ namespace UIExample
             uiGo = go;
 			Ins_BG = go.transform.Find("Ins_BG").GetComponent<Transform>();
 			RT_Center = go.transform.Find("RT_Center").GetComponent<RectTransform>();
+			Ins_CommuCenterWidget = go.transform.Find("RT_Center/Ins_CommuCenterWidget").GetComponent<Transform>();
 			Ins_TopResWidget = go.transform.Find("Ins_TopResWidget").GetComponent<Transform>();
 
             base.OnBind(go);

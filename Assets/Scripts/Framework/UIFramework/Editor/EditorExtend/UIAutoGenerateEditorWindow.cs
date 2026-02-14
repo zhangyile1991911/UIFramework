@@ -162,8 +162,10 @@ namespace Editor
         private void GeneratorWindow(GameObject go)
         {
             var config = AssetDatabase.LoadAssetAtPath<UIAutoGenerateInfoConfig>("Assets/Settings/UIConfig/UIAutoCreateInfoConfig.asset");
-            CreateWindowPrefab(go,config);
-            CreateWindowUIClass(config);
+            if(CreateWindowUIClass(config))
+            {
+                CreateWindowPrefab(go,config);
+            }
         }
         
         private void CreateWindowPrefab(GameObject gameObject,UIAutoGenerateInfoConfig config)
@@ -194,24 +196,34 @@ namespace Editor
             AssetDatabase.Refresh();
         }
         
-        private void CreateWindowUIClass(UIAutoGenerateInfoConfig config)
+        private bool CreateWindowUIClass(UIAutoGenerateInfoConfig config)
         {
             if (uiRootGo == null) throw new System.Exception("生成するノードを入れてください");
             string uiName = GetUIName();
             string parentClassName = GetUIWindowParentName();
             var targetPath = config.WindowScriptPath;
             CheckTargetPath(targetPath);
-            new UIClassAutoCreate().CreateWindow(uiName,parentClassName,uiRootGo,config);
+
+            var creator = new UIClassAutoCreate();
+            if(creator.RunRequirementCheck(parentClassName,uiRootGo))
+            {
+                creator.CreateWindow(uiName,parentClassName,uiRootGo,config);
+                return true;
+            }
+            return false;
         }
         
         private void GeneratorWidget(GameObject go)
         {
             var config = AssetDatabase.LoadAssetAtPath<UIAutoGenerateInfoConfig>("Assets/Settings/UIConfig/UIAutoCreateInfoConfig.asset");
-            CreateWidgetClass(config);
-            CreateWidgetPrefab(go,config);
+            if(CreateWidgetClass(config))
+            {
+                CreateWidgetPrefab(go,config);    
+            }
+            
         }
 
-        private void CreateWidgetClass(UIAutoGenerateInfoConfig config)
+        private bool CreateWidgetClass(UIAutoGenerateInfoConfig config)
         {
             if (uiRootGo == null) throw new System.Exception("プレハブのルートノードをドラッグ＆ドロップしてください。");
             string uiName = GetUIName();
@@ -219,7 +231,13 @@ namespace Editor
             var parentClassName = GetUIWidgetParentName();
             var targetPath = config.WindowScriptPath;
             CheckTargetPath(targetPath);
-            new UIClassAutoCreate().CreateWidget(uiName,parentClassName,uiRootGo,config);
+            var creator = new UIClassAutoCreate();
+            if(creator.RunRequirementCheck(parentClassName,uiRootGo))
+            {
+                creator.CreateWidget(uiName,parentClassName,uiRootGo,config);
+                return true;
+            }
+            return false;
         }
 
         private void CreateWidgetPrefab(GameObject gameObject,UIAutoGenerateInfoConfig config)

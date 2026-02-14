@@ -30,7 +30,7 @@ namespace Framework.UIFramework
     }
 
     [AttributeUsage(AttributeTargets.Method)]
-    public class UIElementChecker : Attribute
+    public class UIRequirement : Attribute
     {
         
     }

@@ -191,7 +191,7 @@ namespace Editor
             return path;
         }
         
-        public void CreateWidget(string uiWidgetName,string uiParentName, GameObject uiRootGo,UIAutoGenerateInfoConfig config, bool isForceUpdate = false)
+        public void CreateWidget(string uiWidgetName,string uiParentName, GameObject uiRootGo,UIAutoGenerateInfoConfig config)
         {
             this.uiRootGo = uiRootGo;
             allNodeInfos.Clear();
@@ -233,7 +233,7 @@ namespace Editor
             viewTemplateFile = viewTemplateFile.Replace("{5}",infoConfig.CustomWidgetScope);
 
             string uiVIewFilePath = string.Format("{0}/{1}View.cs", config.WidgetScriptPath,uiWidgetName);
-            if (!isForceUpdate && File.Exists(uiVIewFilePath))
+            if (File.Exists(uiVIewFilePath))
             {
                 if (EditorUtility.DisplayDialog("警告", "既存スクリプトを上書きますか", "はい","いいえ"))
                 {
@@ -293,5 +293,41 @@ namespace Editor
             }
             File.Replace(newFilePath,uiClassFilePath,null);
         }
+
+        public bool RunRequirementCheck(string parentClassName, GameObject uiRootGo)
+        {
+            if(parentClassName == nameof(UIWindow) || parentClassName == nameof(UIWidget))
+            {
+                Debug.Log("Default Parent Class has not Requirement Checker method");
+                return true;
+            }
+
+            var UIFrameAssembly = typeof(UIWindow).Assembly;
+            var parentType = UIFrameAssembly.GetTypes().First(one=>parentClassName == one.Name);
+
+            var RequirementChecker = parentType.GetMethods(BindingFlags.Static | BindingFlags.Public)
+            .First(m => m.GetCustomAttribute<UIRequirement>() != null);
+
+            var paramArr = RequirementChecker.GetParameters();
+            if(paramArr.Length != 1)
+            {
+                Debug.Log("Paramater Count dont match");
+                return true;    
+            }
+            
+            if(paramArr[0].ParameterType != typeof(GameObject))
+            {
+                Debug.Log("Paramater Type dont match");
+                return true;    
+            }
+            if(RequirementChecker.ReturnType != typeof(bool))
+            {
+                Debug.Log("Paramater ReturnType dont match");
+                return true;
+            }
+
+            var result = RequirementChecker.Invoke(null,new object[]{uiRootGo});
+            return (bool)result;
+        } 
     }
 }
